@@ -62,5 +62,9 @@ public class PostService {
 		post.setLikes(likes);
 		_pr.save(post);
 	}
+
+	public void update(Post post) {
+		_pr.save(post);
+	}
 	// Crud methods to act on services go here.
 }

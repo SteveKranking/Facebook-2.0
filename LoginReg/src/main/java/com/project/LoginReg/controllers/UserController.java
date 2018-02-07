@@ -99,7 +99,7 @@ public class UserController{
 		for (Post iPost : allPosts) {
 			postLoop.add(iPost);
 		}
-
+		// still need to determine whether or not  the current User has liked each post
 		model.addAttribute("postLoop", postLoop);
 		return "dashboard";
 	}
@@ -117,8 +117,10 @@ public class UserController{
 
 	// Delete Post
 	@RequestMapping("/post/{id}/delete")
-	public String deletePost(@PathVariable("id") Long id) {
+	public String deletePost(@PathVariable("id") Long id, HttpSession s) {
 		_ps.destroy(id);
+		User user = _us.findById((Long)s.getAttribute("id"));
+		user.setTotalPosts(user.getTotalPosts() - 1);
 		return "redirect:/dashboard";
 	}
 
@@ -158,9 +160,12 @@ public class UserController{
 
 		Post thisPost = _ps.findById(id);
 		thisPost.setNumLikes(thisPost.getNumLikes() + 1);
+		thisPost.setLiked(false);
 		_pr.save(thisPost);
 		
 		System.out.println(thisPost.getNumLikes());
+
+		
 
 
 		currentUser.setTotalLikes(currentUser.getTotalLikes() +1);
@@ -168,12 +173,22 @@ public class UserController{
 		return "redirect:/dashboard";
 	}
 	//Unlike Stuff
-	@RequestMapping("/post/{id}/unjoin")
-	public String unlikePost(@PathVariable("id") long id, HttpSession session) {
-			User currentUser = _us.findById((Long) session.getAttribute("id"));
-			_ps.remove(id, currentUser);
-				
-		return "redirect:/dashboard";
+	@PostMapping("/{id}/unjoin")
+	public String unjoin(@PathVariable("id") long post_id, HttpSession session, Model model) {
+		Post post = _ps.findById(post_id);
+		long user_id = (long)session.getAttribute("id");
+		User currentUser =(User)_us.findById(user_id);
+		if(post.isLiked()== true) {post.setLiked(false);_ps.update(post);
+		}else if(post.isLiked() == false) {post.setLiked(true);_ps.update(post);}
+		List<User> users =post.getLikes();
+		users.remove(currentUser);
+		
+		post.setLikes(users);
+
+		currentUser.setTotalLikes(currentUser.getTotalLikes() - 1);
+		
+		 _ps.update(post);
+		 return "redirect:/";
 	}
 
 }

@@ -19,18 +19,21 @@
 		<p> ${thisPost.user.firstName} says: ${thisPost.contents} </p>
 
         <p>__________________________________________________________________________________________</p>
-
+        
         <table>
 
             <thead>
                 <tr>
-                    <td>Persons alias </td>
-                    <td>full name </td>
+                    <c:if test = "${currentUsers.size() == 0}">
+                        <td> No one has liked this post </td>>
+                    </c:if>
+                    <c:if test = "${currentUsers.size() > 0}">
+                        <td> People who have liked this post </td>
+                    </c:if>
                 </tr>
             </thead>
                 <c:forEach items="${currentUsers}" var="thisUser">
                     <tr>
-                        <td> ${thisUser.getAlias()}</td>
                         <td> ${thisUser.getFirstName()} ${thisUser.getLastName()} </td>
                     </tr>
                 </c:forEach>
