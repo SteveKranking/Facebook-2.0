@@ -34,9 +34,9 @@
 		
 			<c:choose>
 						<c:when test="${thisPost.isLiked() == true}">
-							<span> <a href="/post/${thisPost.id}/join"> Like! </a> </span>						</c:when>
+							<span> <a href="/post/${thisPost.id}/unjoin"> Unlike </a> </span>						</c:when>
 						<c:otherwise>
-							<span> <a href="/post/${thisPost.id}/unjoin"> Unlike </a> </span>
+							<span> <a href="/post/${thisPost.id}/join"> Like! </a> </span>
 						</c:otherwise>
 				</c:choose>	
 						

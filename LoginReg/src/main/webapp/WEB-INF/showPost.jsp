@@ -25,7 +25,7 @@
             <thead>
                 <tr>
                     <c:if test = "${currentUsers.size() == 0}">
-                        <td> No one has liked this post </td>>
+                        <td> No one has liked this post </td>
                     </c:if>
                     <c:if test = "${currentUsers.size() > 0}">
                         <td> People who have liked this post </td>

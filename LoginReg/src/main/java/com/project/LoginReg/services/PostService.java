@@ -24,6 +24,7 @@ public class PostService {
 	public void create(User poster, Post post){
 		
 		post.setUser(poster);
+		post.setLiked(false);
 		_pr.save(post);
 		
 	}

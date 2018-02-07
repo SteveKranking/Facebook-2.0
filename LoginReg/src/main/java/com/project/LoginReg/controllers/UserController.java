@@ -160,27 +160,27 @@ public class UserController{
 
 		Post thisPost = _ps.findById(id);
 		thisPost.setNumLikes(thisPost.getNumLikes() + 1);
-		thisPost.setLiked(false);
+		thisPost.setLiked(true);
 		_pr.save(thisPost);
 		
 		System.out.println(thisPost.getNumLikes());
-
-		
-
 
 		currentUser.setTotalLikes(currentUser.getTotalLikes() +1);
 		_ur.save(currentUser);
 		return "redirect:/dashboard";
 	}
+
 	//Unlike Stuff
-	@PostMapping("/{id}/unjoin")
-	public String unjoin(@PathVariable("id") long post_id, HttpSession session, Model model) {
+	@RequestMapping("/post/{id}/unjoin")
+	public String unjoin(@PathVariable("id") long post_id, HttpSession s, Model model) {
+		
 		Post post = _ps.findById(post_id);
-		long user_id = (long)session.getAttribute("id");
-		User currentUser =(User)_us.findById(user_id);
-		if(post.isLiked()== true) {post.setLiked(false);_ps.update(post);
-		}else if(post.isLiked() == false) {post.setLiked(true);_ps.update(post);}
-		List<User> users =post.getLikes();
+
+		User currentUser = _us.findById((Long)s.getAttribute("id"));
+		
+		post.setLiked(false);
+
+		List<User> users = post.getLikes();
 		users.remove(currentUser);
 		
 		post.setLikes(users);
@@ -188,9 +188,7 @@ public class UserController{
 		currentUser.setTotalLikes(currentUser.getTotalLikes() - 1);
 		
 		 _ps.update(post);
-		 return "redirect:/";
+		 return "redirect:/dashboard";
 	}
 
 }
-
-
