@@ -1,0 +1,10 @@
+com\project\LoginReg\models\User.class
+com\project\LoginReg\models\Post.class
+com\project\LoginReg\repositories\UserRepository.class
+com\project\LoginReg\controllers\Router.class
+com\project\LoginReg\services\PostService.class
+com\project\LoginReg\services\UserService.class
+com\project\LoginReg\LoginRegApplication.class
+com\project\LoginReg\repositories\PostRepository.class
+com\project\LoginReg\controllers\UserController.class
+com\project\LoginReg\validators\UserValidator.class
