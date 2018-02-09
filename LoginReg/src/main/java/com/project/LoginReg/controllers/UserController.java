@@ -120,7 +120,7 @@ public class UserController{
 	public String deletePost(@PathVariable("id") Long id, HttpSession s) {
 		_ps.destroy(id);
 		User user = _us.findById((Long)s.getAttribute("id"));
-		user.setTotalPosts(user.getTotalPosts() - 1);
+		user.setTotalPosts(user.getTotalPosts() -1);
 		return "redirect:/dashboard";
 	}
 
@@ -159,7 +159,7 @@ public class UserController{
 		_ps.addLike(id, currentUser);
 
 		Post thisPost = _ps.findById(id);
-		thisPost.setNumLikes(thisPost.getNumLikes() + 1);
+		thisPost.setNumLikes(thisPost.getNumLikes() +1);
 		thisPost.setLiked(true);
 		_pr.save(thisPost);
 		
@@ -185,7 +185,7 @@ public class UserController{
 		
 		post.setLikes(users);
 
-		currentUser.setTotalLikes(currentUser.getTotalLikes() - 1);
+		currentUser.setTotalLikes(currentUser.getTotalLikes() -1);
 		
 		 _ps.update(post);
 		 return "redirect:/dashboard";

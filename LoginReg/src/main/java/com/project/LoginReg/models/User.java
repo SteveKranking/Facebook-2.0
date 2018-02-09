@@ -40,6 +40,8 @@ public class User{
 	@Transient
 	private String confirm;
 
+	//maybe add profile pic?
+
 	private int totalLikes;
 
 	private int totalPosts;
