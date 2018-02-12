@@ -9,13 +9,19 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Index</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" 
-		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">	
+		<title>Dashboard</title>
+		<link rel="stylesheet" type="text/css" href="/css/styles.css">
+		<link rel="stylesheet"  href="css/boostrap.min.css">
 		<script src="/js/main.js"></script>
+		<script src="/js/boostrap.min.js"></script>
 	</head>
 
 	<body>
+
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<a href="#" class="navbar-brand"> Bacefook </a>
+		</nav>
+
 		<div class="container">
 			<div>
 				<form method="POST" class="form-horizontal" action="/login">
