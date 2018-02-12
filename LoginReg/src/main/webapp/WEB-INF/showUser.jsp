@@ -10,7 +10,7 @@
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 			<title> Show Profile </title>
 			<link rel="stylesheet" type="text/css" href="/css/styles.css">
-			<link rel="stylesheet"  href="css/bootstrap.min.css">
+			<link rel="stylesheet"  href="/css/bootstrap.min.css">
 			<script src="/js/main.js"></script>
 			<script src="/js/bootstrap.min.js"></script>
 	</head>
