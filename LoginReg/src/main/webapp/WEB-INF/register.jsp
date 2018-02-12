@@ -23,64 +23,67 @@
 		</nav>
 
 		<div class="container">
-			<div>
+			<div class="row">
+				<div class="col-lg-6">
+				<p class="lead"> Login </p>
 				<form method="POST" class="form-horizontal" action="/login">
-					<p>
-						<label class="control-label col-sm-2" for="email">Email</label>
-						<input id="email" name="email"/>
-						
-					</p>
-					<p>
-						<label class="control-label col-sm-2" for="password">Password</label>
-						<input type="password" id="password" name="password"/>
-					</p>
-					<input type="submit" value="Login!"/>
+				<p>
+					<label class="control-label col-sm-2" for="email">Email</label>
+					<input id="email" name="email"/>
+					
+				</p>
+				<p>
+					<label class="control-label col-sm-2" for="password">Password</label>
+					<input type="password" id="password" name="password"/>
+				</p>
+				<input type="submit" value="Login!"/>
 				</form>
-			</div>
+				</div>
 
-		<div>
-		<form:form method="POST" class="form-horizontal" action="/register" modelAttribute="user">
-		<p>
-            <form:label class="control-label col-sm-2" path="alias"> Username:</form:label>
-			<form:input path="alias"/>
-			<form:errors path="alias"></form:errors>
-		</p>
-        <p>
-            <form:label class="control-label col-sm-2" path="firstName">First Name:
-				<form:errors path="firstName"></form:errors>
-			</form:label>
-            <form:input path="firstName"/>
-        </p>
-        <p>
-			<form:label class="control-label col-sm-2" path="lastName">Last Name:</form:label>
-			<form:errors path="lastName"></form:errors>
-            <form:input path="lastName"/>
-        </p>
-        <p>
-            <form:label class="control-label col-sm-2" path="email">Email:
-			<form:errors path="Email"></form:errors>
-			</form:label>
-            <form:input path="email"/>
-        </p>
-        <p>
-			<form:label class="control-label col-sm-2" path="password">Password:
-				<form:errors path="password"></form:errors>
-			</form:label>
-			
-            <form:password path="password"/>
-        </p>
-        <p>
-            <form:label class="control-label col-sm-2" path="confirm">Password Confirmation:</form:label>
-			<form:password path="confirm"/>
-			<form:errors path="confirm"></form:errors>
-		</p>
-		
-		<p><form:errors path="user.*"/></p>
-        <input type="submit" value="Register!"/>
-		</form:form>
+				<div class="col-lg-6">
+				<p class="lead"> Register </p>
+					<form:form method="POST" class="form-horizontal" action="/register" modelAttribute="user">
+					<p>
+					<form:label class="control-label col-sm-2" path="alias"> Username:</form:label>
+					<form:input path="alias"/>
+					<form:errors path="alias"></form:errors>
+					</p>
+					<p>
+					<form:label class="control-label col-sm-2" path="firstName">First Name:
+					<form:errors path="firstName"></form:errors>
+					</form:label>
+					<form:input path="firstName"/>
+					</p>
+					<p>
+					<form:label class="control-label col-sm-2" path="lastName">Last Name:</form:label>
+					<form:errors path="lastName"></form:errors>
+					<form:input path="lastName"/>
+					</p>
+					<p>
+					<form:label class="control-label col-sm-2" path="email">Email:
+					<form:errors path="Email"></form:errors>
+					</form:label>
+					<form:input path="email"/>
+					</p>
+					<p>
+					<form:label class="control-label col-sm-2" path="password">Password:
+					<form:errors path="password"></form:errors>
+					</form:label>
 
+					<form:password path="password"/>
+					</p>
+					<p>
+					<form:label class="control-label col-sm-2" path="confirm">Password Confirmation:</form:label>
+					<form:password path="confirm"/>
+					<form:errors path="confirm"></form:errors>
+					</p>
+
+					<p><form:errors path="user.*"/></p>
+					<input type="submit" value="Register!"/>
+					</form:form>
+
+					</div>
 		</div>
-
 	</div>
 	</body>
 </html>

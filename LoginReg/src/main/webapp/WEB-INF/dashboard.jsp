@@ -16,14 +16,15 @@
 		</head>
 	
 		<body>
-	
+			
+			
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<a href="#" class="navbar-brand"> Bacefook </a>
 			</nav>
 
 		<h1>Welcome back, ${ currentUser.firstName }!</h1>
 		<a href="/logout">Logout</a>
-
+ 
 		<form:form method="POST" action="/newPost" modelAttribute="post">
 
 			<form:label path="contents"> What're you thinking? </form:label>
