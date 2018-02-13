@@ -126,9 +126,12 @@ public class UserController{
 
 	// Show the user's profile
 	@RequestMapping("/user/{id}")
-	public String showUser(@PathVariable("id") long id, HttpSession session, Model model, @ModelAttribute("user") User user) {
+	public String showUser(@PathVariable("id") long id, HttpSession s, Model model, @ModelAttribute("user") User user) {
 		User thisUser = _us.findById(id);
+		User currentUser = _us.findById((Long)s.getAttribute("id"));
 		model.addAttribute("thisUser", thisUser);
+		model.addAttribute("currentUser", currentUser);
+
 		return "showUser";
 	}
 

@@ -18,7 +18,17 @@
 		
 			<body>
 				<nav class="navbar navbar-expand-lg navbar-light bg-light">
-					<a href="#" class="navbar-brand"> Bacefook </a>
+					<a href="/dashboard" class="navbar-brand"> Bacefook </a>
+
+					<ul class="navbar-nav">
+							<li class="nav-item">
+								<a href="/user/${currentUser.id}" class="nav-link"> Profile </a>
+							</li>
+							<li class="nav-item">
+								<a href="/logout" class="nav-link"> Logout </a>
+							</li>
+					</ul>
+
 					<form action="" class="form-inline">
 						<input type="seach" class="form-control" placeholder="Search">
 						<button class="btn btn-success" type="submit"> Search </button>					
@@ -26,8 +36,7 @@
 				</nav>
 			
 			<div class="col-lg-12">
-				<h1>Welcome back, ${ currentUser.firstName }!</h1>
-				<a href="/logout">Logout</a>
+				<h1>You are signed in as, ${ currentUser.firstName }!</h1>
 
 				<form:form method="POST" action="/newPost" modelAttribute="post">
 

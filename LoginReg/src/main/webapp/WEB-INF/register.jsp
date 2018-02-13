@@ -10,7 +10,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Dashboard</title>
-		<link rel="stylesheet" type="text/css" href="/css/styles.css">
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
 		<link rel="stylesheet"  href="/css/bootstrap.min.css">
 		<script src="/js/main.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
@@ -22,7 +22,15 @@
 			<a href="#" class="navbar-brand"> Bacefook </a>
 		</nav>
 
-		<div class="container">
+		<div class="jumbotron jumbotron-fluid">
+			<div class="container">
+				<h1 class="display-1"> Bacefook </h1>
+				<p class="lead"> Bacebook is where your parents go to try to stalk your friendships and social life </p>
+			</div>
+		</div>
+
+		<div>
+			<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
 				<p class="lead"> Login </p>
@@ -83,6 +91,7 @@
 					</form:form>
 
 					</div>
+		</div>
 		</div>
 	</div>
 	</body>

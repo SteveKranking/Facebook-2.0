@@ -18,30 +18,42 @@
 	<body>
 
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a href="#" class="navbar-brand"> Bacefook </a>
-			<form action="" class="form-inline">
+				<a href="/dashboard" class="navbar-brand"> Bacefook </a>
+
+				<ul class="navbar-nav">
+						<li class="nav-item">
+							<a href="/user/${currentUser.id}" class="nav-link"> Profile </a>
+						</li>
+						<li class="nav-item">
+							<a href="/logout" class="nav-link"> Logout </a>
+						</li>
+				</ul>
+
+				<form action="" class="form-inline">
 					<input type="seach" class="form-control" placeholder="Search">
 					<button class="btn btn-success" type="submit"> Search </button>					
 				</form>
-		</nav>	
-
-        <a href="/logout">Logout</a> <a href="/dashboard"> Dashboard </a>
-        
-		<h1> ${thisUser.firstName}'s Profile </h1>
-        
-        <p>Name: ${thisUser.firstName} ${thisUser.lastName} </p>
-
-        <p>Alias: ${thisUser.alias} </p>
-
-        <p>Email: ${thisUser.email} </p>
-
-        <p>__________________________________________________________________________________________</p>
-
-        <p> Total posts: ${thisUser.getTotalPosts()} </p>
-
-        <p> Total number of likes: ${thisUser.getTotalLikes()} </p>
-
-
+			</nav>	
 		
+		<div class="container">
+		<div class="col-lg-12">
+
+			<h1> ${thisUser.firstName}'s Profile </h1>
+			
+			<p>Name: ${thisUser.firstName} ${thisUser.lastName} </p>
+
+			<p>Alias: ${thisUser.alias} </p>
+
+			<p>Email: ${thisUser.email} </p>
+
+			<p>__________________________________________________________________________________________</p>
+
+			<p> Total posts: ${thisUser.getTotalPosts()} </p>
+
+			<p> Total number of likes: ${thisUser.getTotalLikes()} </p>
+		
+		</div>
+		</div>
+
 	</body>
 </html>

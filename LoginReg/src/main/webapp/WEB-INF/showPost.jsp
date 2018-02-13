@@ -16,16 +16,27 @@
         </head>
     
         <body>
-    
+            
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a href="#" class="navbar-brand"> Bacefook </a>
-                <form action="" class="form-inline">
-						<input type="seach" class="form-control" placeholder="Search">
-						<button class="btn btn-success" type="submit"> Search </button>					
-					</form>
-            </nav>
+                    <a href="/dashboard" class="navbar-brand"> Bacefook </a>
 
-        <a href="/logout">Logout</a> <a href="/dashboard"> Dashboard </a>
+                    <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="/user/${currentUser.id}" class="nav-link"> Profile </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/logout" class="nav-link"> Logout </a>
+                            </li>
+                    </ul>
+
+                    <form action="" class="form-inline">
+                        <input type="seach" class="form-control" placeholder="Search">
+                        <button class="btn btn-success" type="submit"> Search </button>					
+                    </form>
+                </nav>
+
+        <div class="container">
+        <div class="copl-lg-12">
         
 		<p> ${thisPost.user.firstName} says: ${thisPost.contents} </p>
 
@@ -50,6 +61,7 @@
                 </c:forEach>
 
             </table>
-		
+        </div>
+        </div>
 	</body>
 </html>
