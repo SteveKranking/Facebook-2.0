@@ -6,5 +6,12 @@ background: -webkit-linear-gradient(left, rgba(44,167,224,1) 35%,rgba(225,227,23
 background: linear-gradient(to right, rgba(44,167,224,1) 35%,rgba(225,227,237,1) 62%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2ca7e0', endColorstr='#e1e3ed',GradientType=1 ); /* IE6-9 */
 
-color: rgb(44, 38, 38);
+color: white;
+}
+
+.navbar {
+    background-color: rgb(44, 167, 224);
+}
+.navbar-brand{
+    color: white;
 }

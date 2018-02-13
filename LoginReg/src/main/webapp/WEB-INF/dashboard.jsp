@@ -17,7 +17,7 @@
 			</head>
 		
 			<body>
-				<nav class="navbar navbar-expand-lg navbar-light bg-light">
+				<nav class="navbar navbar-expand-lg navbar-custom bg-custom">
 					<a href="/dashboard" class="navbar-brand"> Bacefook </a>
 
 					<ul class="navbar-nav">
@@ -36,7 +36,8 @@
 				</nav>
 			
 			<div class="col-lg-12">
-				<h1>You are signed in as, ${ currentUser.firstName }!</h1>
+
+				<h1>You are signed in as, ${ currentUser.alias } </h1>
 
 				<form:form method="POST" action="/newPost" modelAttribute="post">
 
@@ -49,28 +50,40 @@
 				<h2> Timeline </h2>
 
 				<c:forEach items="${postLoop}" var="thisPost">
-
-					<p> <a href="/user/${thisPost.user.id}"> ${thisPost.user.firstName} </a> says: ${thisPost.contents} </p>
-					<br />
 				
-					<c:choose>
-								<c:when test="${thisPost.isLiked() == true}">
-									<span> <a href="/post/${thisPost.id}/unjoin"> Unlike </a> </span>						</c:when>
-								<c:otherwise>
-									<span> <a href="/post/${thisPost.id}/join"> Like! </a> </span>
-								</c:otherwise>
-						</c:choose>	
-								
-					
-					<span> <a href="/post/${thisPost.id}">
-						
-						${thisPost.likes.size()} people </a> like this!	
+				<div class="container">
+				<div class="card">
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">
 
-							<c:if test="${thisPost.user.equals(currentUser)}">
-								<p> <a href="/post/${thisPost.id}/delete"> Delete Post </a></p>
-							</c:if>
-					</span>
-					<p> _________________________________________________________________________________</p>
+							<div class="card-title">
+								<p> <a href="/user/${thisPost.user.id}"> ${thisPost.user.firstName}: </a> </p>
+							</div>
+							
+							<div class="card-text">
+								<p> ${thisPost.contents} </p>
+							</div>
+								<c:choose>
+											<c:when test="${thisPost.isLiked() == true}">
+												<span> <a href="/post/${thisPost.id}/unjoin"> Unlike </a> </span>						</c:when>
+											<c:otherwise>
+												<span> <a href="/post/${thisPost.id}/join"> Like! </a> </span>
+											</c:otherwise>
+									</c:choose>	
+											
+								
+								<span> <a href="/post/${thisPost.id}">
+									
+									${thisPost.likes.size()} people </a> like this!	
+
+										<c:if test="${thisPost.user.equals(currentUser)}">
+											<p> <a href="/post/${thisPost.id}/delete"> Delete Post </a></p>
+										</c:if>
+								</span>
+							</li>
+					</ul>	
+				</div>
+				</div>
 
 				</c:forEach>
 			</div>

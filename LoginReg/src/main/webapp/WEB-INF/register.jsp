@@ -18,7 +18,7 @@
 
 	<body>
 
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-custom bg-custom">
 			<a href="#" class="navbar-brand"> Bacefook </a>
 		</nav>
 
