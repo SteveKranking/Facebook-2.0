@@ -6,60 +6,65 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-	<head>
-			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-			<title>Dashboard</title>
-			<link rel="stylesheet" type="text/css" href="/css/styles.css">
-			<link rel="stylesheet"  href="/css/bootstrap.min.css">
-			<script src="/js/main.js"></script>
-			<script src="/js/bootstrap.min.js"></script>
-		</head>
-	
-		<body>
-			
-			
-			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				<a href="#" class="navbar-brand"> Bacefook </a>
-			</nav>
-
-		<h1>Welcome back, ${ currentUser.firstName }!</h1>
-		<a href="/logout">Logout</a>
- 
-		<form:form method="POST" action="/newPost" modelAttribute="post">
-
-			<form:label path="contents"> What're you thinking? </form:label>
-			<form:input path="contents" />
-			
-			<input type="submit" value="Submit" />
-		</form:form>
-
-		<h2> Timeline </h2>
-
-		<c:forEach items="${postLoop}" var="thisPost">
-
-			<p> <a href="/user/${thisPost.user.id}"> ${thisPost.user.firstName} </a> says: ${thisPost.contents} </p>
-			<br />
+	<div class="container">
+		<head>
+				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+				<title>Dashboard</title>
+				<link rel="stylesheet" type="text/css" href="/css/styles.css">
+				<link rel="stylesheet"  href="/css/bootstrap.min.css">
+				<script src="/js/main.js"></script>
+				<script src="/js/bootstrap.min.js"></script>
+			</head>
 		
-			<c:choose>
-						<c:when test="${thisPost.isLiked() == true}">
-							<span> <a href="/post/${thisPost.id}/unjoin"> Unlike </a> </span>						</c:when>
-						<c:otherwise>
-							<span> <a href="/post/${thisPost.id}/join"> Like! </a> </span>
-						</c:otherwise>
-				</c:choose>	
-						
+			<body>
+				<nav class="navbar navbar-expand-lg navbar-light bg-light">
+					<a href="#" class="navbar-brand"> Bacefook </a>
+					<form action="" class="form-inline">
+						<input type="seach" class="form-control" placeholder="Search">
+						<button class="btn btn-success" type="submit"> Search </button>					
+					</form>
+				</nav>
 			
-			<span> <a href="/post/${thisPost.id}">
+			<div class="col-lg-12">
+				<h1>Welcome back, ${ currentUser.firstName }!</h1>
+				<a href="/logout">Logout</a>
+
+				<form:form method="POST" action="/newPost" modelAttribute="post">
+
+					<form:label path="contents"> What're you thinking? </form:label>
+					<form:input path="contents" />
+					
+					<input type="submit" value="Submit" />
+				</form:form>
+
+				<h2> Timeline </h2>
+
+				<c:forEach items="${postLoop}" var="thisPost">
+
+					<p> <a href="/user/${thisPost.user.id}"> ${thisPost.user.firstName} </a> says: ${thisPost.contents} </p>
+					<br />
 				
-				${thisPost.likes.size()} people </a> like this!	
+					<c:choose>
+								<c:when test="${thisPost.isLiked() == true}">
+									<span> <a href="/post/${thisPost.id}/unjoin"> Unlike </a> </span>						</c:when>
+								<c:otherwise>
+									<span> <a href="/post/${thisPost.id}/join"> Like! </a> </span>
+								</c:otherwise>
+						</c:choose>	
+								
+					
+					<span> <a href="/post/${thisPost.id}">
+						
+						${thisPost.likes.size()} people </a> like this!	
 
-					 <c:if test="${thisPost.user.equals(currentUser)}">
-						<p> <a href="/post/${thisPost.id}/delete"> Delete Post </a></p>
-					 </c:if>
-			 </span>
-			 <p> _________________________________________________________________________________</p>
+							<c:if test="${thisPost.user.equals(currentUser)}">
+								<p> <a href="/post/${thisPost.id}/delete"> Delete Post </a></p>
+							</c:if>
+					</span>
+					<p> _________________________________________________________________________________</p>
 
-		</c:forEach>
-
+				</c:forEach>
+			</div>
+		</div>
 	</body>
 </html>

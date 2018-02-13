@@ -19,6 +19,10 @@
     
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a href="#" class="navbar-brand"> Bacefook </a>
+                <form action="" class="form-inline">
+						<input type="seach" class="form-control" placeholder="Search">
+						<button class="btn btn-success" type="submit"> Search </button>					
+					</form>
             </nav>
 
         <a href="/logout">Logout</a> <a href="/dashboard"> Dashboard </a>
