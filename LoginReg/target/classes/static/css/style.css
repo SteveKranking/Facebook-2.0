@@ -19,6 +19,6 @@ section.more-space {
     padding: 100px 0px;
 }
 
-#homelink {
-    color: white;
+* a {
+    color: rgb(108, 194, 209);
 }

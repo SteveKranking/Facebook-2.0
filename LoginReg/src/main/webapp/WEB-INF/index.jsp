@@ -20,12 +20,18 @@
 
 		<nav class="navbar navbar-expand-lg navbar-custom bg-custom">
             <a href="#" class="navbar-brand"> Bacefook </a>
-            <ul class="navbar-nav">
-                <li class="nav-item" id="homelink">
-                    <a href="/register" class="nav-link"> Login/Register </a>
-                </li>
-            </ul>
         </nav>
+        
+        <br />
+        <br />
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p class="lead"> Already have an account or need to create one? Click here to sign in/register <a href="/register"> Here!!! </a> </p>
+                </div>
+            </div>
+        </div>
 
         <section class="more-space">
         <div class="container">
