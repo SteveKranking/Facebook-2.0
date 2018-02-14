@@ -15,3 +15,10 @@ color: white;
 .navbar-brand{
     color: white;
 }
+section.more-space {
+    padding: 100px 0px;
+}
+
+#homelink {
+    color: white;
+}

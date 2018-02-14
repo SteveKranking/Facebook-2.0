@@ -51,6 +51,11 @@ public class UserController{
 		return "register";
 	}
 
+	@RequestMapping("/home")
+	public String home(){
+		return "index";
+	}
+
 	@RequestMapping("/logout")
 	public String logout(HttpSession s){
 		s.setAttribute("id", null);

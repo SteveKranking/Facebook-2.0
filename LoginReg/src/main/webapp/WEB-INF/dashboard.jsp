@@ -53,33 +53,37 @@
 				
 				<div class="container">
 				<div class="card">
-					<ul class="list-group list-group-flush">
-						<li class="list-group-item">
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item">
 
-							<div class="card-title">
-								<p> <a href="/user/${thisPost.user.id}"> ${thisPost.user.firstName}: </a> </p>
-							</div>
-							
-							<div class="card-text">
-								<p> ${thisPost.contents} </p>
-							</div>
-								<c:choose>
-											<c:when test="${thisPost.isLiked() == true}">
-												<span> <a href="/post/${thisPost.id}/unjoin"> Unlike </a> </span>						</c:when>
-											<c:otherwise>
-												<span> <a href="/post/${thisPost.id}/join"> Like! </a> </span>
-											</c:otherwise>
-									</c:choose>	
-											
+								<div class="card-title">
+									<p> <a href="/user/${thisPost.user.id}"> ${thisPost.user.firstName}: </a> </p>
+								</div>
 								
-								<span> <a href="/post/${thisPost.id}">
+								<div class="card-body">
+								
+									<div class="card-text">
+										<p> ${thisPost.contents} </p>
+									</div>
 									
-									${thisPost.likes.size()} people </a> like this!	
+										<c:choose>
+												<c:when test="${thisPost.isLiked() == true}">
+													<span> <a href="/post/${thisPost.id}/unjoin"> Unlike </a> </span>						</c:when>
+												<c:otherwise>
+													<span class="badge"> <a href="/post/${thisPost.id}/join"> Like! </a> </span>
+												</c:otherwise>
+										</c:choose>	
+												
+									
+										<span> <a href="/post/${thisPost.id}">
+											
+											${thisPost.likes.size()} people </a> like this!	
 
-										<c:if test="${thisPost.user.equals(currentUser)}">
-											<p> <a href="/post/${thisPost.id}/delete"> Delete Post </a></p>
-										</c:if>
-								</span>
+												<c:if test="${thisPost.user.equals(currentUser)}">
+													<p> <a href="/post/${thisPost.id}/delete"> Delete Post </a></p>
+												</c:if>
+										</span>
+								</div>
 							</li>
 					</ul>	
 				</div>
