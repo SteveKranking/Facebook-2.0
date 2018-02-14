@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="carousel">
                     <div class="col-lg-12">
-                        <div class="carouselExample" class="carousel slide">
+                        <div id="carouselExample" class="carousel slide">
                             <ol class="carousel-indicators">
                                 <li data-target="#carouselExample" data-slide-to="0" class="active"> </li>
                                 <li data-target="#carouselExample" data-slide-to="1"> </li>
@@ -68,10 +68,10 @@
                                 </div>
                             </div>
                             <a href="#carouselExample" class="carousel-control-prev" data-slide="prev" role="button">
-                                <span class="carousel-control-prev-icon"></span>
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             </a>
                             <a href="#carouselExample" class="carousel-control-next" data-slide="next" role="button">
-                                <span class="carousel-control-next-icon"></span>
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             </a>
 
                         </div>
